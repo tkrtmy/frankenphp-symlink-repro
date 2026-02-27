@@ -1,0 +1,14 @@
+{
+	frankenphp {
+		worker current/worker.php {
+			num 2
+		}
+	}
+	auto_https off
+	admin localhost:2019
+}
+
+:80 {
+	rewrite current/worker.php
+	php
+}

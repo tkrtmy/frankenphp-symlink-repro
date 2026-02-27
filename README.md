@@ -92,7 +92,8 @@ curl http://localhost:8080/
 
 ```bash
 rm -rf releases/v1
-curl http://localhost:8080/   # connection error or 502
+docker exec fptest curl -sf -X POST http://localhost:2019/frankenphp/workers/restart
+curl http://localhost:8080/   # connection error
 ```
 
 Docker logs show the loop:
